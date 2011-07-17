@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C99428C13D25E83001743A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C99428B13D25E83001743A4 /* UIKit.framework */; };
+		4C99428E13D25E83001743A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C99428D13D25E83001743A4 /* Foundation.framework */; };
+		4C99429013D25E83001743A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C99428F13D25E83001743A4 /* CoreGraphics.framework */; };
+		4C99429613D25E83001743A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C99429413D25E83001743A4 /* InfoPlist.strings */; };
+		4C99429913D25E83001743A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C99429813D25E83001743A4 /* main.m */; };
+		4C99429C13D25E83001743A4 /* LKNumberPadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C99429B13D25E83001743A4 /* LKNumberPadAppDelegate.m */; };
+		4C99429F13D25E83001743A4 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C99429D13D25E83001743A4 /* MainWindow.xib */; };
+		4C9942A213D25E83001743A4 /* LKNumberPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9942A113D25E83001743A4 /* LKNumberPadViewController.m */; };
+		4C9942A513D25E83001743A4 /* LKNumberPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9942A313D25E83001743A4 /* LKNumberPadViewController.xib */; };
+		4C9942AC13D25E83001743A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C99428B13D25E83001743A4 /* UIKit.framework */; };
+		4C9942AD13D25E83001743A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C99428D13D25E83001743A4 /* Foundation.framework */; };
+		4C9942AE13D25E83001743A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C99428F13D25E83001743A4 /* CoreGraphics.framework */; };
+		4C9942B613D25E83001743A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C9942B413D25E83001743A4 /* InfoPlist.strings */; };
+		4C9942B913D25E83001743A4 /* LKNumberPadTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 4C9942B813D25E83001743A4 /* LKNumberPadTests.h */; };
+		4C9942BB13D25E84001743A4 /* LKNumberPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9942BA13D25E84001743A4 /* LKNumberPadTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C9942AF13D25E83001743A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C99427E13D25E82001743A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C99428613D25E83001743A4;
+			remoteInfo = LKNumberPad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C99428713D25E83001743A4 /* LKNumberPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LKNumberPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C99428B13D25E83001743A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C99428D13D25E83001743A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C99428F13D25E83001743A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C99429313D25E83001743A4 /* LKNumberPad-Info.plist */ = {isa = PBXFileReference; path = "LKNumberPad-Info.plist"; sourceTree = "<group>"; };
+		4C99429513D25E83001743A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C99429713D25E83001743A4 /* LKNumberPad-Prefix.pch */ = {isa = PBXFileReference; path = "LKNumberPad-Prefix.pch"; sourceTree = "<group>"; };
+		4C99429813D25E83001743A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C99429A13D25E83001743A4 /* LKNumberPadAppDelegate.h */ = {isa = PBXFileReference; path = LKNumberPadAppDelegate.h; sourceTree = "<group>"; };
+		4C99429B13D25E83001743A4 /* LKNumberPadAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKNumberPadAppDelegate.m; sourceTree = "<group>"; };
+		4C99429E13D25E83001743A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4C9942A013D25E83001743A4 /* LKNumberPadViewController.h */ = {isa = PBXFileReference; path = LKNumberPadViewController.h; sourceTree = "<group>"; };
+		4C9942A113D25E83001743A4 /* LKNumberPadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKNumberPadViewController.m; sourceTree = "<group>"; };
+		4C9942A413D25E83001743A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LKNumberPadViewController.xib; sourceTree = "<group>"; };
+		4C9942AB13D25E83001743A4 /* LKNumberPadTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LKNumberPadTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C9942B313D25E83001743A4 /* LKNumberPadTests-Info.plist */ = {isa = PBXFileReference; path = "LKNumberPadTests-Info.plist"; sourceTree = "<group>"; };
+		4C9942B513D25E83001743A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C9942B713D25E83001743A4 /* LKNumberPadTests-Prefix.pch */ = {isa = PBXFileReference; path = "LKNumberPadTests-Prefix.pch"; sourceTree = "<group>"; };
+		4C9942B813D25E83001743A4 /* LKNumberPadTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKNumberPadTests.h; sourceTree = "<group>"; };
+		4C9942BA13D25E84001743A4 /* LKNumberPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKNumberPadTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C99428413D25E83001743A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C99428C13D25E83001743A4 /* UIKit.framework in Frameworks */,
+				4C99428E13D25E83001743A4 /* Foundation.framework in Frameworks */,
+				4C99429013D25E83001743A4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9942A713D25E83001743A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9942AC13D25E83001743A4 /* UIKit.framework in Frameworks */,
+				4C9942AD13D25E83001743A4 /* Foundation.framework in Frameworks */,
+				4C9942AE13D25E83001743A4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C99427C13D25E82001743A4 = {
+			isa = PBXGroup;
+			children = (
+				4C99429113D25E83001743A4 /* LKNumberPad */,
+				4C9942B113D25E83001743A4 /* LKNumberPadTests */,
+				4C99428A13D25E83001743A4 /* Frameworks */,
+				4C99428813D25E83001743A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C99428813D25E83001743A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C99428713D25E83001743A4 /* LKNumberPad.app */,
+				4C9942AB13D25E83001743A4 /* LKNumberPadTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C99428A13D25E83001743A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C99428B13D25E83001743A4 /* UIKit.framework */,
+				4C99428D13D25E83001743A4 /* Foundation.framework */,
+				4C99428F13D25E83001743A4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C99429113D25E83001743A4 /* LKNumberPad */ = {
+			isa = PBXGroup;
+			children = (
+				4C99429A13D25E83001743A4 /* LKNumberPadAppDelegate.h */,
+				4C99429B13D25E83001743A4 /* LKNumberPadAppDelegate.m */,
+				4C99429D13D25E83001743A4 /* MainWindow.xib */,
+				4C9942A013D25E83001743A4 /* LKNumberPadViewController.h */,
+				4C9942A113D25E83001743A4 /* LKNumberPadViewController.m */,
+				4C9942A313D25E83001743A4 /* LKNumberPadViewController.xib */,
+				4C99429213D25E83001743A4 /* Supporting Files */,
+			);
+			path = LKNumberPad;
+			sourceTree = "<group>";
+		};
+		4C99429213D25E83001743A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C99429313D25E83001743A4 /* LKNumberPad-Info.plist */,
+				4C99429413D25E83001743A4 /* InfoPlist.strings */,
+				4C99429713D25E83001743A4 /* LKNumberPad-Prefix.pch */,
+				4C99429813D25E83001743A4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C9942B113D25E83001743A4 /* LKNumberPadTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C9942B813D25E83001743A4 /* LKNumberPadTests.h */,
+				4C9942BA13D25E84001743A4 /* LKNumberPadTests.m */,
+				4C9942B213D25E83001743A4 /* Supporting Files */,
+			);
+			path = LKNumberPadTests;
+			sourceTree = "<group>";
+		};
+		4C9942B213D25E83001743A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C9942B313D25E83001743A4 /* LKNumberPadTests-Info.plist */,
+				4C9942B413D25E83001743A4 /* InfoPlist.strings */,
+				4C9942B713D25E83001743A4 /* LKNumberPadTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C99428613D25E83001743A4 /* LKNumberPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C9942BE13D25E84001743A4 /* Build configuration list for PBXNativeTarget "LKNumberPad" */;
+			buildPhases = (
+				4C99428313D25E83001743A4 /* Sources */,
+				4C99428413D25E83001743A4 /* Frameworks */,
+				4C99428513D25E83001743A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LKNumberPad;
+			productName = LKNumberPad;
+			productReference = 4C99428713D25E83001743A4 /* LKNumberPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C9942AA13D25E83001743A4 /* LKNumberPadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C9942C113D25E84001743A4 /* Build configuration list for PBXNativeTarget "LKNumberPadTests" */;
+			buildPhases = (
+				4C9942A613D25E83001743A4 /* Sources */,
+				4C9942A713D25E83001743A4 /* Frameworks */,
+				4C9942A813D25E83001743A4 /* Resources */,
+				4C9942A913D25E83001743A4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C9942B013D25E83001743A4 /* PBXTargetDependency */,
+			);
+			name = LKNumberPadTests;
+			productName = LKNumberPadTests;
+			productReference = 4C9942AB13D25E83001743A4 /* LKNumberPadTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C99427E13D25E82001743A4 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4C99428113D25E82001743A4 /* Build configuration list for PBXProject "LKNumberPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C99427C13D25E82001743A4;
+			productRefGroup = 4C99428813D25E83001743A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C99428613D25E83001743A4 /* LKNumberPad */,
+				4C9942AA13D25E83001743A4 /* LKNumberPadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C99428513D25E83001743A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C99429613D25E83001743A4 /* InfoPlist.strings in Resources */,
+				4C99429F13D25E83001743A4 /* MainWindow.xib in Resources */,
+				4C9942A513D25E83001743A4 /* LKNumberPadViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9942A813D25E83001743A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9942B613D25E83001743A4 /* InfoPlist.strings in Resources */,
+				4C9942B913D25E83001743A4 /* LKNumberPadTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C9942A913D25E83001743A4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C99428313D25E83001743A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C99429913D25E83001743A4 /* main.m in Sources */,
+				4C99429C13D25E83001743A4 /* LKNumberPadAppDelegate.m in Sources */,
+				4C9942A213D25E83001743A4 /* LKNumberPadViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C9942A613D25E83001743A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C9942BB13D25E84001743A4 /* LKNumberPadTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C9942B013D25E83001743A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C99428613D25E83001743A4 /* LKNumberPad */;
+			targetProxy = 4C9942AF13D25E83001743A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C99429413D25E83001743A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C99429513D25E83001743A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C99429D13D25E83001743A4 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C99429E13D25E83001743A4 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4C9942A313D25E83001743A4 /* LKNumberPadViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C9942A413D25E83001743A4 /* en */,
+			);
+			name = LKNumberPadViewController.xib;
+			sourceTree = "<group>";
+		};
+		4C9942B413D25E83001743A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C9942B513D25E83001743A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C9942BC13D25E84001743A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C9942BD13D25E84001743A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4C9942BF13D25E84001743A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LKNumberPad/LKNumberPad-Prefix.pch";
+				INFOPLIST_FILE = "LKNumberPad/LKNumberPad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C9942C013D25E84001743A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LKNumberPad/LKNumberPad-Prefix.pch";
+				INFOPLIST_FILE = "LKNumberPad/LKNumberPad-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4C9942C213D25E84001743A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LKNumberPad.app/LKNumberPad";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LKNumberPadTests/LKNumberPadTests-Prefix.pch";
+				INFOPLIST_FILE = "LKNumberPadTests/LKNumberPadTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4C9942C313D25E84001743A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LKNumberPad.app/LKNumberPad";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LKNumberPadTests/LKNumberPadTests-Prefix.pch";
+				INFOPLIST_FILE = "LKNumberPadTests/LKNumberPadTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C99428113D25E82001743A4 /* Build configuration list for PBXProject "LKNumberPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9942BC13D25E84001743A4 /* Debug */,
+				4C9942BD13D25E84001743A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C9942BE13D25E84001743A4 /* Build configuration list for PBXNativeTarget "LKNumberPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9942BF13D25E84001743A4 /* Debug */,
+				4C9942C013D25E84001743A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4C9942C113D25E84001743A4 /* Build configuration list for PBXNativeTarget "LKNumberPadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9942C213D25E84001743A4 /* Debug */,
+				4C9942C313D25E84001743A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C99427E13D25E82001743A4 /* Project object */;
+}

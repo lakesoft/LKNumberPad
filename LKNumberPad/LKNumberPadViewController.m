@@ -39,6 +39,7 @@
     self.numberPadView.disabledSet = [NSSet setWithObjects:
                                       [NSNumber numberWithInt:2],
                                       [NSNumber numberWithInt:8], nil];
+    self.numberPadView.keyboardColor = [UIColor yellowColor];
 }
 
 - (void)viewDidUnload

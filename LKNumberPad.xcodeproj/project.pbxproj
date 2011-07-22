@@ -22,6 +22,10 @@
 		4C9942B613D25E83001743A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C9942B413D25E83001743A4 /* InfoPlist.strings */; };
 		4C9942B913D25E83001743A4 /* LKNumberPadTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 4C9942B813D25E83001743A4 /* LKNumberPadTests.h */; };
 		4C9942BB13D25E84001743A4 /* LKNumberPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9942BA13D25E84001743A4 /* LKNumberPadTests.m */; };
+		4C9942C613D25EA2001743A4 /* LKNumberPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9942C513D25EA2001743A4 /* LKNumberPadView.m */; };
+		4C9942C713D25EA2001743A4 /* LKNumberPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9942C513D25EA2001743A4 /* LKNumberPadView.m */; };
+		4CFAAB8E13D2B28E00541EB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFAAB8D13D2B28E00541EB4 /* QuartzCore.framework */; };
+		4CFAAB9813D2B5BB00541EB4 /* DrawingSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAAB9713D2B5BB00541EB4 /* DrawingSample.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,22 +43,27 @@
 		4C99428B13D25E83001743A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C99428D13D25E83001743A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C99428F13D25E83001743A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4C99429313D25E83001743A4 /* LKNumberPad-Info.plist */ = {isa = PBXFileReference; path = "LKNumberPad-Info.plist"; sourceTree = "<group>"; };
+		4C99429313D25E83001743A4 /* LKNumberPad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LKNumberPad-Info.plist"; sourceTree = "<group>"; };
 		4C99429513D25E83001743A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4C99429713D25E83001743A4 /* LKNumberPad-Prefix.pch */ = {isa = PBXFileReference; path = "LKNumberPad-Prefix.pch"; sourceTree = "<group>"; };
+		4C99429713D25E83001743A4 /* LKNumberPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LKNumberPad-Prefix.pch"; sourceTree = "<group>"; };
 		4C99429813D25E83001743A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4C99429A13D25E83001743A4 /* LKNumberPadAppDelegate.h */ = {isa = PBXFileReference; path = LKNumberPadAppDelegate.h; sourceTree = "<group>"; };
+		4C99429A13D25E83001743A4 /* LKNumberPadAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKNumberPadAppDelegate.h; sourceTree = "<group>"; };
 		4C99429B13D25E83001743A4 /* LKNumberPadAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKNumberPadAppDelegate.m; sourceTree = "<group>"; };
 		4C99429E13D25E83001743A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		4C9942A013D25E83001743A4 /* LKNumberPadViewController.h */ = {isa = PBXFileReference; path = LKNumberPadViewController.h; sourceTree = "<group>"; };
+		4C9942A013D25E83001743A4 /* LKNumberPadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKNumberPadViewController.h; sourceTree = "<group>"; };
 		4C9942A113D25E83001743A4 /* LKNumberPadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKNumberPadViewController.m; sourceTree = "<group>"; };
 		4C9942A413D25E83001743A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LKNumberPadViewController.xib; sourceTree = "<group>"; };
 		4C9942AB13D25E83001743A4 /* LKNumberPadTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LKNumberPadTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C9942B313D25E83001743A4 /* LKNumberPadTests-Info.plist */ = {isa = PBXFileReference; path = "LKNumberPadTests-Info.plist"; sourceTree = "<group>"; };
+		4C9942B313D25E83001743A4 /* LKNumberPadTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LKNumberPadTests-Info.plist"; sourceTree = "<group>"; };
 		4C9942B513D25E83001743A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4C9942B713D25E83001743A4 /* LKNumberPadTests-Prefix.pch */ = {isa = PBXFileReference; path = "LKNumberPadTests-Prefix.pch"; sourceTree = "<group>"; };
+		4C9942B713D25E83001743A4 /* LKNumberPadTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LKNumberPadTests-Prefix.pch"; sourceTree = "<group>"; };
 		4C9942B813D25E83001743A4 /* LKNumberPadTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKNumberPadTests.h; sourceTree = "<group>"; };
 		4C9942BA13D25E84001743A4 /* LKNumberPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKNumberPadTests.m; sourceTree = "<group>"; };
+		4C9942C413D25EA2001743A4 /* LKNumberPadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LKNumberPadView.h; path = LKNumberPad/LKNumberPadView.h; sourceTree = "<group>"; };
+		4C9942C513D25EA2001743A4 /* LKNumberPadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LKNumberPadView.m; path = LKNumberPad/LKNumberPadView.m; sourceTree = "<group>"; };
+		4CFAAB8D13D2B28E00541EB4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4CFAAB9613D2B5BB00541EB4 /* DrawingSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawingSample.h; path = ../DrawingSample.h; sourceTree = "<group>"; };
+		4CFAAB9713D2B5BB00541EB4 /* DrawingSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawingSample.m; path = ../DrawingSample.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFAAB8E13D2B28E00541EB4 /* QuartzCore.framework in Frameworks */,
 				4C99428C13D25E83001743A4 /* UIKit.framework in Frameworks */,
 				4C99428E13D25E83001743A4 /* Foundation.framework in Frameworks */,
 				4C99429013D25E83001743A4 /* CoreGraphics.framework in Frameworks */,
@@ -81,10 +91,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C2452FD13D275AE00CBC8AF /* LKNumberPad */ = {
+			isa = PBXGroup;
+			children = (
+				4C9942C413D25EA2001743A4 /* LKNumberPadView.h */,
+				4C9942C513D25EA2001743A4 /* LKNumberPadView.m */,
+			);
+			name = LKNumberPad;
+			sourceTree = "<group>";
+		};
 		4C99427C13D25E82001743A4 = {
 			isa = PBXGroup;
 			children = (
-				4C99429113D25E83001743A4 /* LKNumberPad */,
+				4C2452FD13D275AE00CBC8AF /* LKNumberPad */,
+				4C99429113D25E83001743A4 /* TestApplication */,
 				4C9942B113D25E83001743A4 /* LKNumberPadTests */,
 				4C99428A13D25E83001743A4 /* Frameworks */,
 				4C99428813D25E83001743A4 /* Products */,
@@ -103,6 +123,7 @@
 		4C99428A13D25E83001743A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CFAAB8D13D2B28E00541EB4 /* QuartzCore.framework */,
 				4C99428B13D25E83001743A4 /* UIKit.framework */,
 				4C99428D13D25E83001743A4 /* Foundation.framework */,
 				4C99428F13D25E83001743A4 /* CoreGraphics.framework */,
@@ -110,7 +131,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4C99429113D25E83001743A4 /* LKNumberPad */ = {
+		4C99429113D25E83001743A4 /* TestApplication */ = {
 			isa = PBXGroup;
 			children = (
 				4C99429A13D25E83001743A4 /* LKNumberPadAppDelegate.h */,
@@ -119,8 +140,11 @@
 				4C9942A013D25E83001743A4 /* LKNumberPadViewController.h */,
 				4C9942A113D25E83001743A4 /* LKNumberPadViewController.m */,
 				4C9942A313D25E83001743A4 /* LKNumberPadViewController.xib */,
+				4CFAAB9613D2B5BB00541EB4 /* DrawingSample.h */,
+				4CFAAB9713D2B5BB00541EB4 /* DrawingSample.m */,
 				4C99429213D25E83001743A4 /* Supporting Files */,
 			);
+			name = TestApplication;
 			path = LKNumberPad;
 			sourceTree = "<group>";
 		};
@@ -263,6 +287,8 @@
 				4C99429913D25E83001743A4 /* main.m in Sources */,
 				4C99429C13D25E83001743A4 /* LKNumberPadAppDelegate.m in Sources */,
 				4C9942A213D25E83001743A4 /* LKNumberPadViewController.m in Sources */,
+				4C9942C613D25EA2001743A4 /* LKNumberPadView.m in Sources */,
+				4CFAAB9813D2B5BB00541EB4 /* DrawingSample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9942BB13D25E84001743A4 /* LKNumberPadTests.m in Sources */,
+				4C9942C713D25EA2001743A4 /* LKNumberPadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +470,7 @@
 				4C9942C013D25E84001743A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C9942C113D25E84001743A4 /* Build configuration list for PBXNativeTarget "LKNumberPadTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +479,7 @@
 				4C9942C313D25E84001743A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

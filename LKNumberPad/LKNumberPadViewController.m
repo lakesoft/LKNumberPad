@@ -7,11 +7,18 @@
 //
 
 #import "LKNumberPadViewController.h"
+#import "LKNumberPadView.h"
 
 @implementation LKNumberPadViewController
+@synthesize numberPadView = numberPadView_;
+@synthesize touchedCounterLabel;
+@synthesize comboLabel;
 
 - (void)dealloc
 {
+    [numberPadView release];
+    [touchedCounterLabel release];
+    [comboLabel release];
     [super dealloc];
 }
 
@@ -25,16 +32,20 @@
 
 #pragma mark - View lifecycle
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.numberPadView.disabledSet = [NSSet setWithObjects:
+                                      [NSNumber numberWithInt:2],
+                                      [NSNumber numberWithInt:8], nil];
 }
-*/
 
 - (void)viewDidUnload
 {
+    [self setNumberPadView:nil];
+    [self setTouchedCounterLabel:nil];
+    [self setComboLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -45,5 +56,19 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+
+#pragma mark -
+#pragma mark LKNumberPadViewDelegate
+- (void)didTouchNumberPadView:(LKNumberPadView*)numberPadView withNumber:(NSUInteger)number
+{
+    self.touchedCounterLabel.text = [NSString stringWithFormat:@"%d", number];
+}
+
+- (void)didTouchNumberPadView:(LKNumberPadView*)numberPadView withSequentialString:(NSString*)string
+{
+    self.comboLabel.text = string;
+}
+
 
 @end

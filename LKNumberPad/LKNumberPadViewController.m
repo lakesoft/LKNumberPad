@@ -36,8 +36,11 @@
 {
     [super viewDidLoad];
     
-    self.numberPadView.disabledSet = [NSSet setWithObjects:
-                                      [NSNumber numberWithInt:2],
+    self.numberPadView.enabledSet = [NSSet setWithObjects:
+                                     [NSNumber numberWithInt:1],
+                                     [NSNumber numberWithInt:2],
+                                     [NSNumber numberWithInt:3],
+                                     [NSNumber numberWithInt:4],
                                       [NSNumber numberWithInt:8], nil];
     self.numberPadView.keyboardColor = [UIColor yellowColor];
 }
@@ -61,9 +64,9 @@
 
 #pragma mark -
 #pragma mark LKNumberPadViewDelegate
-- (void)didTouchNumberPadView:(LKNumberPadView*)numberPadView withNumber:(NSUInteger)number
+- (void)didTouchNumberPadView:(LKNumberPadView*)numberPadView touchedString:(NSString*)string
 {
-    self.touchedCounterLabel.text = [NSString stringWithFormat:@"%d", number];
+    self.touchedCounterLabel.text = string;
 }
 
 - (void)didTouchNumberPadView:(LKNumberPadView*)numberPadView withSequentialString:(NSString*)string

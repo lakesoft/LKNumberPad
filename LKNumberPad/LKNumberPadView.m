@@ -36,26 +36,26 @@ enum {
 @synthesize imageKind;
 
 #define LKNUMBERPADVIEW_PAN_SHADOW_OFFSET_X 0
-#define LKNUMBERPADVIEW_PAN_SHADOW_OFFSET_Y 5.0
-#define LKNUMBERPADVIEW_PAN_SHADOW_BLUR     22.5
+#define LKNUMBERPADVIEW_PAN_SHADOW_OFFSET_Y 3.0
+#define LKNUMBERPADVIEW_PAN_SHADOW_BLUR     20.0
 
-#define LKNUMBERPADVIEW_UPPER_WIDTH   54.0
+#define LKNUMBERPADVIEW_UPPER_WIDTH   52.0
 #define LKNUMBERPADVIEW_LOWER_WIDTH   32.0
 
-#define LKNUMBERPADVIEW_PAN_UPPER_RADIUS  8.0
-#define LKNUMBERPADVIEW_PAN_LOWER_RADIUS  8.0
+#define LKNUMBERPADVIEW_PAN_UPPER_RADIUS  7.0
+#define LKNUMBERPADVIEW_PAN_LOWER_RADIUS  7.0
 
 #define LKNUMBERPADVIEW_PAN_UPPDER_WIDTH   (LKNUMBERPADVIEW_UPPER_WIDTH-LKNUMBERPADVIEW_PAN_UPPER_RADIUS*2)
-#define LKNUMBERPADVIEW_PAN_UPPER_HEIGHT    56.0
+#define LKNUMBERPADVIEW_PAN_UPPER_HEIGHT    61.0
 
 #define LKNUMBERPADVIEW_PAN_LOWER_WIDTH     (LKNUMBERPADVIEW_LOWER_WIDTH-LKNUMBERPADVIEW_PAN_LOWER_RADIUS*2)
-#define LKNUMBERPADVIEW_PAN_LOWER_HEIGHT    28.0
+#define LKNUMBERPADVIEW_PAN_LOWER_HEIGHT    32.0
 
 #define LKNUMBERPADVIEW_PAN_UL_WIDTH        ((LKNUMBERPADVIEW_UPPER_WIDTH-LKNUMBERPADVIEW_LOWER_WIDTH)/2)
 
-#define LKNUMBERPADVIEW_PAN_MIDDLE_HEIGHT    20.0
+#define LKNUMBERPADVIEW_PAN_MIDDLE_HEIGHT    11.0
 
-#define LKNUMBERPADVIEW_PAN_CURVE_SIZE      3.5
+#define LKNUMBERPADVIEW_PAN_CURVE_SIZE      7.0
 
 #define LKNUMBERPADVIEW_PADDING_X     15
 #define LKNUMBERPADVIEW_PADDING_Y     10
@@ -63,8 +63,8 @@ enum {
 #define LKNUMBERPADVIEW_HEIGHT   (LKNUMBERPADVIEW_PAN_UPPER_HEIGHT + LKNUMBERPADVIEW_PAN_MIDDLE_HEIGHT + LKNUMBERPADVIEW_PAN_LOWER_HEIGHT + LKNUMBERPADVIEW_PADDING_Y*2)
 
 
-#define LKNUMBERPADVIEW_OFFSET_X    -26
-#define LKNUMBERPADVIEW_OFFSET_Y    56
+#define LKNUMBERPADVIEW_OFFSET_X    -25
+#define LKNUMBERPADVIEW_OFFSET_Y    59
 
 - (id)init
 {
@@ -197,7 +197,7 @@ enum {
                                            LKNUMBERPADVIEW_HEIGHT));
     context = UIGraphicsGetCurrentContext();
     CGContextTranslateCTM(context, 0.0, LKNUMBERPADVIEW_HEIGHT);
-    CGContextScaleCTM(context, 1.0, -1.0);  // TODO
+    CGContextScaleCTM(context, 1.0, -1.0);
 
     CGContextAddPath(context, path);
     CGContextClip(context);
@@ -242,7 +242,7 @@ enum {
 
 - (void)drawInContext:(CGContextRef)context
 {
-    CGColorRef shadowColorRef = [[UIColor blackColor] CGColor];
+    CGColorRef shadowColorRef = [[UIColor colorWithWhite:0.1 alpha:1.0] CGColor];
     CGContextSetShadowWithColor(context,
                                 CGSizeMake(LKNUMBERPADVIEW_PAN_SHADOW_OFFSET_X,
                                            LKNUMBERPADVIEW_PAN_SHADOW_OFFSET_Y),
@@ -257,14 +257,8 @@ enum {
     CGContextDrawImage(context, imageFrame, imageRef);
 
     // draw text
-    /*
-    CGFontRef font = CGFontCreateWithFontName((CFStringRef)@"Helvetica");
-    CGContextSetFont(context, font);
-    CGContextSetFontSize(context, 44.0);
-    */
     CGContextSelectFont(context, "Helvetica Bold", 44, kCGEncodingMacRoman);
     CGContextSetTextDrawingMode(context, kCGTextFill);
-//    CGContextSetGrayFillColor(context, 0.0, 1.0);
     CGContextSetFillColorWithColor(context, [[UIColor blackColor] CGColor]);
     CGContextSetTextMatrix(context, CGAffineTransformMakeScale(1.0, -1.0));
     
@@ -276,7 +270,7 @@ enum {
                                 shadowColorRef
                                 );
   
-    CGContextShowTextAtPoint(context, 30, 55,
+    CGContextShowTextAtPoint(context, 28, 55,
                              [self.character UTF8String],
                              [self.character length]);
     
@@ -289,33 +283,37 @@ enum {
 //==============================================================================
 @interface LKNumberPadView()
 @property (nonatomic, assign) NSInteger touchedIndex;
-@property (nonatomic, retain) NSString* sequentialString;
 @property (nonatomic, retain) NSDate* touchedDate;
 @property (nonatomic, retain) LKNumberPadLayer* numberPadLayer;
 @end
 
 @implementation LKNumberPadView
 
+@synthesize startWithZero;
 @synthesize delegate;
 @synthesize keyboardColor;
 @synthesize textColor;
 @synthesize disabledKeyboardColor;
 @synthesize disabledTextColor;
 @synthesize sequenceInterval;
-@synthesize disabledSet;
+@synthesize enabledSet;
 
 @synthesize touchedIndex = touchedIndex_;
 @synthesize sequentialString = sequentialString_;
+@synthesize touchedString = touchedString_;
 @synthesize touchedDate = touchedDate_;
 @synthesize numberPadLayer = numberPadLayer_;
 
-#define LKNUMBERPATVIEW_KEYBOARD_NUM    10
-#define LKNUMBERPATVIEW_SEQUENTIAL_INTERVAL 0.75
+#define LKNUMBERPADVIEW_KEYBOARD_NUM    10
+#define LKNUMBERPADVIEW_SEQUENTIAL_INTERVAL 0.75
 
 #pragma mark -
 #pragma mark Privates
 
-
+- (NSInteger)_numberWithIndex:(NSInteger)index
+{
+    return (index+(self.startWithZero?0:1))%LKNUMBERPADVIEW_KEYBOARD_NUM;
+}
 
 #pragma mark -
 #pragma mark Basics
@@ -327,7 +325,7 @@ enum {
     self.disabledTextColor = [UIColor lightGrayColor];
     self.userInteractionEnabled = YES;
     self.touchedIndex = -1;
-    self.sequenceInterval = LKNUMBERPATVIEW_SEQUENTIAL_INTERVAL;
+    self.sequenceInterval = LKNUMBERPADVIEW_SEQUENTIAL_INTERVAL;
 
     self.numberPadLayer = [LKNumberPadLayer layer];
     [self.layer addSublayer:self.numberPadLayer];
@@ -355,20 +353,20 @@ enum {
     self.textColor = nil;
     self.disabledKeyboardColor = nil;
     self.disabledTextColor = nil;
-    self.disabledSet = nil;
+    self.enabledSet = nil;
     [super dealloc];
 }
 
-#define LKNUMBERPATVIEW_SHADOW_OFFSET_X    0.0
-#define LKNUMBERPATVIEW_SHADOW_OFFSET_Y    1.5
-#define LKNUMBERPATVIEW_SHADOW_BLUR        1.5
+#define LKNUMBERPADVIEW_SHADOW_OFFSET_X    0.0
+#define LKNUMBERPADVIEW_SHADOW_OFFSET_Y    1.5
+#define LKNUMBERPADVIEW_SHADOW_BLUR        1.5
 
-#define LKNUMBERPATVIEW_KEYBOARD_PADDING_X    3
-#define LKNUMBERPATVIEW_KEYBOARD_PADDING_Y    8
-#define LKNUMBERPATVIEW_CONNER_RADIUS    4.5
+#define LKNUMBERPADVIEW_KEYBOARD_PADDING_X    3
+#define LKNUMBERPADVIEW_KEYBOARD_PADDING_Y    8
+#define LKNUMBERPADVIEW_CONNER_RADIUS    4.5
 
-#define LKNUMBERPATVIEW_TEXT_PADDING_X    3
-#define LKNUMBERPATVIEW_TEXT_PADDING_Y    8
+#define LKNUMBERPADVIEW_TEXT_PADDING_X    3
+#define LKNUMBERPADVIEW_TEXT_PADDING_Y    8
 
 - (void)drawRect:(CGRect)rect
 {
@@ -379,30 +377,31 @@ enum {
 
     // (1) draw keyboard
     frame = CGRectMake(0, 0,
-                       self.bounds.size.width / LKNUMBERPATVIEW_KEYBOARD_NUM,
+                       self.bounds.size.width / LKNUMBERPADVIEW_KEYBOARD_NUM,
                        self.bounds.size.height);
     
     shadowColorRef = [[UIColor blackColor] CGColor];
     CGContextSetShadowWithColor(context,
-                                CGSizeMake(LKNUMBERPATVIEW_SHADOW_OFFSET_X,
-                                           LKNUMBERPATVIEW_SHADOW_OFFSET_Y),
-                                LKNUMBERPATVIEW_SHADOW_BLUR,
+                                CGSizeMake(LKNUMBERPADVIEW_SHADOW_OFFSET_X,
+                                           LKNUMBERPADVIEW_SHADOW_OFFSET_Y),
+                                LKNUMBERPADVIEW_SHADOW_BLUR,
                                 shadowColorRef
                                 );
 
-    for (int i=0; i < LKNUMBERPATVIEW_KEYBOARD_NUM; i++) {
+    for (int i=0; i < LKNUMBERPADVIEW_KEYBOARD_NUM; i++) {
         CGRect buttonFrame = CGRectInset(frame,
-                                         LKNUMBERPATVIEW_KEYBOARD_PADDING_X,
-                                         LKNUMBERPATVIEW_KEYBOARD_PADDING_Y);
+                                         LKNUMBERPADVIEW_KEYBOARD_PADDING_X,
+                                         LKNUMBERPADVIEW_KEYBOARD_PADDING_Y);
         UIBezierPath* path = [UIBezierPath bezierPathWithRoundedRect:buttonFrame
-                                                        cornerRadius:LKNUMBERPATVIEW_CONNER_RADIUS];
+                                                        cornerRadius:LKNUMBERPADVIEW_CONNER_RADIUS];
 
-        if ([self.disabledSet containsObject:[NSNumber numberWithInt:i]]) {
-            // disabled
-            drawColor = self.disabledKeyboardColor;
-        } else {
+        if (self.enabledSet == nil ||
+            [self.enabledSet containsObject:[NSNumber numberWithInt:i]]) {
             // enabled
             drawColor = self.keyboardColor;
+        } else {
+            // disabled
+            drawColor = self.disabledKeyboardColor;
         }
         [drawColor set];
     
@@ -420,28 +419,29 @@ enum {
                                 );
 
     frame = CGRectMake(0, 0,
-                       self.bounds.size.width / LKNUMBERPATVIEW_KEYBOARD_NUM,
+                       self.bounds.size.width / LKNUMBERPADVIEW_KEYBOARD_NUM,
                        self.bounds.size.height);
 
     UIFont* font = [UIFont boldSystemFontOfSize:21.0];
     
-    for (int i=0; i < LKNUMBERPATVIEW_KEYBOARD_NUM; i++) {
-        NSString* string = [NSString stringWithFormat:@"%d", (i+1)%LKNUMBERPATVIEW_KEYBOARD_NUM];
+    for (int i=0; i < LKNUMBERPADVIEW_KEYBOARD_NUM; i++) {
+        NSString* string = [NSString stringWithFormat:@"%d", [self _numberWithIndex:i]];
         CGSize size = [string sizeWithFont:font];
         CGRect textFrame = CGRectInset(frame,
-                                       LKNUMBERPATVIEW_KEYBOARD_PADDING_X
-                                       +LKNUMBERPATVIEW_TEXT_PADDING_X,
-                                       LKNUMBERPATVIEW_KEYBOARD_PADDING_Y
-                                       +LKNUMBERPATVIEW_TEXT_PADDING_Y);
+                                       LKNUMBERPADVIEW_KEYBOARD_PADDING_X
+                                       +LKNUMBERPADVIEW_TEXT_PADDING_X,
+                                       LKNUMBERPADVIEW_KEYBOARD_PADDING_Y
+                                       +LKNUMBERPADVIEW_TEXT_PADDING_Y);
         textFrame.origin.x += (textFrame.size.width - size.width)/2.0;
         textFrame.origin.y += (textFrame.size.height - size.height)/2.0;
 
-        if ([self.disabledSet containsObject:[NSNumber numberWithInt:i]]) {
-            // disabled
-            drawColor = self.disabledTextColor;
-        } else {
+        if (self.enabledSet == nil ||
+            [self.enabledSet containsObject:[NSNumber numberWithInt:i]]) {
             // enabled
             drawColor = self.textColor;
+        } else {
+            // disabled
+            drawColor = self.disabledTextColor;
         }
         [drawColor set];
         [string drawAtPoint:textFrame.origin withFont:font];
@@ -455,34 +455,40 @@ enum {
 - (NSUInteger)_indexWithEvent:(UIEvent*)event
 {
     UITouch* touch = [[event allTouches] anyObject];
-    NSUInteger index = [touch locationInView:nil].x / (self.bounds.size.width / LKNUMBERPATVIEW_KEYBOARD_NUM);
+    NSUInteger index = [touch locationInView:self].x / (self.bounds.size.width / LKNUMBERPADVIEW_KEYBOARD_NUM);
     return index;
 }
 
 - (void)_updateWithIndex:(NSUInteger)index
 {
     self.touchedIndex = index;
-    NSUInteger number = (index+1)%LKNUMBERPATVIEW_KEYBOARD_NUM;
+    NSUInteger number = [self _numberWithIndex:index];
+    self.touchedString = [NSString stringWithFormat:@"%d", number];
     
-    if ([self.disabledSet containsObject:[NSNumber numberWithUnsignedInteger:index]]) {
+    if (self.enabledSet && ![self.enabledSet containsObject:[NSNumber numberWithUnsignedInteger:index]]) {
+        self.numberPadLayer.opacity = 0.0;
+
         return;
         // disabled
+    } else {
+        if (self.numberPadLayer.opacity != 1.0) {
+            self.numberPadLayer.opacity = 1.0;
+        }
     }
 
     CGRect numberPadFrame = self.numberPadLayer.frame;
-    numberPadFrame.origin.x = (self.bounds.size.width / LKNUMBERPATVIEW_KEYBOARD_NUM) * index + LKNUMBERPADVIEW_OFFSET_X;
+    numberPadFrame.origin.x = (self.bounds.size.width / LKNUMBERPADVIEW_KEYBOARD_NUM) * index + LKNUMBERPADVIEW_OFFSET_X;
     if (index == 0) {
         self.numberPadLayer.imageKind = LKNumberPadViewImageLeft;
         numberPadFrame.origin.x += LKNUMBERPADVIEW_PAN_UL_WIDTH;
-    } else if (index == LKNUMBERPATVIEW_KEYBOARD_NUM-1) {
+    } else if (index == LKNUMBERPADVIEW_KEYBOARD_NUM-1) {
         self.numberPadLayer.imageKind = LKNumberPadViewImageRight;
         numberPadFrame.origin.x -= LKNUMBERPADVIEW_PAN_UL_WIDTH;
     } else {
         self.numberPadLayer.imageKind = LKNumberPadViewImageInner;
     }
     self.numberPadLayer.frame = numberPadFrame;
-    self.numberPadLayer.character = [NSString stringWithFormat:@"%d",
-                                     (index+1)%LKNUMBERPATVIEW_KEYBOARD_NUM];
+    self.numberPadLayer.character = self.touchedString;
     
     [self setNeedsDisplay];
     [self.numberPadLayer setNeedsDisplay];
@@ -501,8 +507,9 @@ enum {
     self.touchedDate = [NSDate date];
     
     if (self.delegate) {
-        if ([self.delegate respondsToSelector:@selector(didTouchNumberPadView:withNumber:)]) {
-            [self.delegate didTouchNumberPadView:self withNumber:number];
+        if ([self.delegate respondsToSelector:@selector(didTouchNumberPadView:touchedString:)]) {
+            [self.delegate didTouchNumberPadView:self
+                                   touchedString:self.touchedString];
         }
         if ([self.delegate respondsToSelector:@selector(didTouchNumberPadView:withSequentialString:)]) {
             [self.delegate didTouchNumberPadView:self withSequentialString:self.sequentialString];
@@ -513,8 +520,11 @@ enum {
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSUInteger index = [self _indexWithEvent:event];
-    self.numberPadLayer.opacity = 1.0;
+    [CATransaction begin];
+    [CATransaction setValue:(id)kCFBooleanTrue
+                     forKey:kCATransactionDisableActions];
     [self _updateWithIndex:index];
+    [CATransaction commit];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event

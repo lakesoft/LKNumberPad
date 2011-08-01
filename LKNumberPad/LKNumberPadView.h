@@ -14,14 +14,18 @@
 }
 @property (nonatomic, assign) IBOutlet id <LKNumberPadViewDelegate> delegate;
 
+// setting
+@property (nonatomic, assign) BOOL startWithZero;
 @property (nonatomic, retain) UIColor* keyboardColor;
 @property (nonatomic, retain) UIColor* textColor;
 @property (nonatomic, retain) UIColor* disabledKeyboardColor;
 @property (nonatomic, retain) UIColor* disabledTextColor;
-
 @property (nonatomic, assign) NSTimeInterval sequenceInterval;
+@property (nonatomic, retain) NSSet* enabledSet;
 
-@property (nonatomic, retain) NSSet* disabledSet;
+// status
+@property (nonatomic, retain) NSString* touchedString;
+@property (nonatomic, retain) NSString* sequentialString;
 
 @end
 
@@ -29,7 +33,7 @@
 @protocol LKNumberPadViewDelegate <NSObject>
 
 @optional
-- (void)didTouchNumberPadView:(LKNumberPadView*)numberPadView withNumber:(NSUInteger)number;
+- (void)didTouchNumberPadView:(LKNumberPadView*)numberPadView touchedString:(NSString*)string;
 - (void)didTouchNumberPadView:(LKNumberPadView*)numberPadView withSequentialString:(NSString*)string;
 
 @end

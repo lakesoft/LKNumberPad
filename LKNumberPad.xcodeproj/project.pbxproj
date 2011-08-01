@@ -223,6 +223,9 @@
 /* Begin PBXProject section */
 		4C99427E13D25E82001743A4 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 4C99428113D25E82001743A4 /* Build configuration list for PBXProject "LKNumberPad" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;

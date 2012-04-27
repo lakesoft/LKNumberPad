@@ -37,7 +37,7 @@ enum {
 
 #define LKNUMBERPADVIEW_PAN_SHADOW_OFFSET_X 0
 #define LKNUMBERPADVIEW_PAN_SHADOW_OFFSET_Y 3.0
-#define LKNUMBERPADVIEW_PAN_SHADOW_BLUR     20.0
+#define LKNUMBERPADVIEW_PAN_SHADOW_BLUR     10.0
 
 #define LKNUMBERPADVIEW_UPPER_WIDTH   52.0
 #define LKNUMBERPADVIEW_LOWER_WIDTH   32.0
@@ -328,6 +328,7 @@ enum {
     self.sequenceInterval = LKNUMBERPADVIEW_SEQUENTIAL_INTERVAL;
 
     self.numberPadLayer = [LKNumberPadLayer layer];
+    self.numberPadLayer.contentsScale = [[UIScreen mainScreen] scale];
     [self.layer addSublayer:self.numberPadLayer];
 }
 
